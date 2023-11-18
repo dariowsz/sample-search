@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "sample_search"
+version = "0.1.0"
+description = "AI powered semantic search engine for music samples retrieval"
+authors = ["Dario Wisznewer <dariowisznewer@gmail.com>"]
+packages = [
+    { include = "src" },
+    { include = "research" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11.6"
+laion-clap = "^1.1.4"
+chromadb = "^0.4.17"
+matplotlib = "^3.8.2"
+transformers = "4.30.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.11.0"
+flake8 = "^6.1.0"
+isort = "^5.12.0"
+ipykernel = "^6.26.0"
+ipython = "^8.17.2"
+ipdb = "^0.13.13"
+mypy = "^1.7.0"
+python-dotenv = "^1.0.0"
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+line_length = 88
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
