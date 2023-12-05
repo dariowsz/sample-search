@@ -14,7 +14,7 @@ laion-clap = "^1.1.4"
 chromadb = "^0.4.17"
 matplotlib = "^3.8.2"
 transformers = "4.30.0"
-protobuf = "3.20.3"
+protobuf = "^3.20.3"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.11.0"
