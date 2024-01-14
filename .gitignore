@@ -148,3 +148,6 @@ checkpoints/
 
 # Outputs
 output/
+
+# Project specific
+msclap.pt
