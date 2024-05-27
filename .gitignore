@@ -148,3 +148,9 @@ checkpoints/
 
 # Outputs
 output/
+
+# Project specific
+msclap.pt
+
+# CoreML models
+coreml_models
