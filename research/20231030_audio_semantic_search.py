@@ -1,5 +1,5 @@
 # %%
-import research.start as start  # noqa isort:skip
+import start  # noqa isort:skip
 
 # %%
 import chromadb
@@ -9,7 +9,7 @@ from IPython.display import Audio, display
 
 # %%
 # Initialize chromadb client
-chroma_client = chromadb.HttpClient(host="localhost", port="8000")
+chroma_client = chromadb.HttpClient(host="localhost", port=8000)
 
 # %%
 # Get collection and embedding count

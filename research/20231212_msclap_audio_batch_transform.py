@@ -27,7 +27,7 @@ dataloader = DataLoader(
     dataset,
     batch_size=batch_size,
     shuffle=False,
-    num_workers=8,
+    num_workers=0,  # FIXME: Multithreading is thorwing an error. I used 8 in this attribute whitout issues before.
 )
 
 # %%
@@ -37,16 +37,21 @@ clap_model = CLAP(
     version="2023",
     use_cuda=False,
 )
+if torch.backends.mps.is_available():
+    clap_model.clap.to(torch.device("mps"))
 
 # %%
 # Encode audio and save embedding batches to files
 print("Encoding audio...")
 audio_batches = []
 for idx, batch in enumerate(tqdm(dataloader)):
-    encoded_audio_batch = clap_model.get_audio_embeddings(audio_files=batch)
-    audio_batches.append(encoded_audio_batch)
+    preprocessed_audio = clap_model.preprocess_audio(batch, resample=True)
+    if torch.backends.mps.is_available():
+        preprocessed_audio = preprocessed_audio.to(torch.device("mps"))  # type: ignore
+    encoded_audio_batch = clap_model._get_audio_embeddings(preprocessed_audio)
+    audio_batches.append(encoded_audio_batch.cpu())
 audio_batches = torch.cat(audio_batches)
 print(audio_batches.shape)
-torch.save(audio_batches, f"output/audio_embeddings/msclap/embeddings.pt")
+torch.save(audio_batches, f"output/audio_embeddings/msclap/embeddings2.pt")
 
 # %%

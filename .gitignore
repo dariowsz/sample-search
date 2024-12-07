@@ -151,6 +151,7 @@ output/
 
 # Project specific
 msclap.pt
+indexed_sample_dirs.txt
 
 # CoreML models
 coreml_models
