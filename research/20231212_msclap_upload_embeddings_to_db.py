@@ -9,7 +9,7 @@ from src.datasets import SamplesDataset
 
 # %%
 # Initialize chromadb client
-chroma_client = chromadb.HttpClient(host="localhost", port="8000")
+chroma_client = chromadb.HttpClient(host="localhost", port=8000)
 
 # %%
 # Get collection or create it if it doesn't exist

@@ -10,6 +10,7 @@
  Permite el desarrollo multiplataforma, Proporciona una apariencia y sensación nativas Y tiene una sintaxis más simple y es más fácil de aprender que AppKit (framework de desarrollo de aplicaciones de escritorio SOLO para macOS).
 */
 import SwiftUI
+import CoreML
 
 /*ContentView hereda de View. En SwiftUI, una View es cualquier cosa que se pueda dibujar en la pantalla.*/
 struct ContentView: View {
@@ -37,8 +38,24 @@ struct ContentView: View {
                 if dialog.runModal() == NSApplication.ModalResponse.OK {
                     let result = dialog.url
                     if let path = result?.path {
-                        self.path = path
-                        // Script embeddings y subirlos a la bdd
+                        do {
+                            let model = try CLAPTextEncoder_float32()
+                            let input_ids = try MLMultiArray(shape: [1, 77], dataType: .int32)
+                            for i in 0..<input_ids.count {
+                                input_ids[i] = NSNumber(value: i)
+                            }
+                            let attention_mask = try MLMultiArray(shape: [1, 77], dataType: .int32)
+                            for i in 0..<attention_mask.count {
+                                attention_mask[i] = NSNumber(value: 1)
+                            }
+                            let input = CLAPTextEncoder_float32Input(input_ids: input_ids, attention_mask: attention_mask)
+                            
+                            let prediction = try model.prediction(input: input)
+                            print(prediction.text_embedding)
+                            self.path = path
+                        } catch {
+                            print("Error: \(error)")
+                        }
                     }
                 }
             }) {

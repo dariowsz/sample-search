@@ -9,7 +9,7 @@ from msclap import CLAP
 
 # %%
 # Initialize chromadb client
-chroma_client = chromadb.HttpClient(host="localhost", port="8000")
+chroma_client = chromadb.HttpClient(host="localhost", port=8000)
 
 # %%
 # Get collection and embedding count
@@ -38,7 +38,6 @@ results = collection.query(
     n_results=sample_count,
 )
 
-# %%
 for i in range(sample_count):
     result_filename: str = results["metadatas"][0][i]["filename"]  # type: ignore
     audio_data, _ = librosa.load(path=result_filename, sr=44100)
