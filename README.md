@@ -2,6 +2,8 @@
 
 An AI-powered semantic search engine for music samples that allows you to find audio samples using natural language descriptions. The system uses the CLAP model (Contrastive Language-Audio Pretraining) to understand both audio content and text descriptions, enabling semantic search capabilities.
 
+**NOTE**: The current implementation is compatible *only* with MacOS. Minor adjustments are required for Windows and Linux compatibility, which will be addressed soon.
+
 ## Demo
 https://www.loom.com/share/f41e5a06b34e448899467bd3a7bae744?sid=cee4ebdb-a03e-496e-8bfe-35c8f3f91010
 
@@ -56,6 +58,7 @@ streamlit run src/demo.py
 ## Future Work
 
 - [ ] Add a way to search samples by audio.
+- [ ] Compatibility with other OS (Windows and Linux)
 - [ ] Improve the UI/UX.
 - [ ] Add new encoder models and improve existing ones.
 - [ ] Finish Swift application with CoreML models (once Apple allows it).
