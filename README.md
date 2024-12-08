@@ -2,6 +2,10 @@
 
 An AI-powered semantic search engine for music samples that allows you to find audio samples using natural language descriptions. The system uses the CLAP model (Contrastive Language-Audio Pretraining) to understand both audio content and text descriptions, enabling semantic search capabilities.
 
+## Demo
+
+[![Loom Demo](https://www.loom.com/embed/f41e5a06b34e448899467bd3a7bae744?sid=af18dfbb-d8b6-42ac-ae9e-2359f4acf318)](https://www.loom.com/share/f41e5a06b34e448899467bd3a7bae744?sid=af18dfbb-d8b6-42ac-ae9e-2359f4acf318)
+
 ## Features
 
 - Index all your audio samples to a vector database.
