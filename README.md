@@ -4,7 +4,7 @@ An AI-powered semantic search engine for music samples that allows you to find a
 
 ## Demo
 
-[![Loom Demo](https://www.loom.com/embed/f41e5a06b34e448899467bd3a7bae744?sid=af18dfbb-d8b6-42ac-ae9e-2359f4acf318)](https://www.loom.com/share/f41e5a06b34e448899467bd3a7bae744?sid=af18dfbb-d8b6-42ac-ae9e-2359f4acf318)
+[![Loom Demo](https://www.loom.com/share/f41e5a06b34e448899467bd3a7bae744?sid=af18dfbb-d8b6-42ac-ae9e-2359f4acf318)](https://www.loom.com/share/f41e5a06b34e448899467bd3a7bae744?sid=af18dfbb-d8b6-42ac-ae9e-2359f4acf318)
 
 ## Features
 
